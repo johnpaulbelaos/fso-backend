@@ -1,0 +1,35 @@
+### Correct request
+POST http://localhost:3001/api/persons/
+Content-Type: application/json
+
+{
+  "name": "Rooney Mara",
+  "number": "0999-999-9999"
+}
+
+### Missing number
+POST http://localhost:3001/api/persons/
+Content-Type: application/json
+
+{
+  "name": "Rooney Mara",
+  "number": ""
+}
+
+### Missing name
+POST http://localhost:3001/api/persons/
+Content-Type: application/json
+
+{
+  "name": "",
+  "number": ""
+}
+
+### Existing person
+POST http://localhost:3001/api/persons/
+Content-Type: application/json
+
+{ 
+  "name": "Mary Poppendieck", 
+  "number": "39-23-6423122"
+}
