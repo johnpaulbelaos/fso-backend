@@ -1,12 +1,12 @@
 const mongoose = require('mongoose');
-require("node:dns/promises").setServers(["1.1.1.1", "8.8.8.8"]);
+require('node:dns/promises').setServers(['1.1.1.1', '8.8.8.8']);
 
 const url = process.env.MONGODB_URI;
 
 mongoose.set('strictQuery',false);
 
 mongoose.connect(url, { family: 4 })
-  .then(result => {
+  .then(_result => {
     console.log('connected to MongoDB');
   })
   .catch(error => {
