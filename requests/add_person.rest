@@ -25,11 +25,11 @@ Content-Type: application/json
   "number": ""
 }
 
-### Existing person
-POST http://localhost:3001/api/persons/
+### Update existing person
+PUT http://localhost:3001/api/persons/698d88af41500376b04d8112
 Content-Type: application/json
 
 { 
-  "name": "Mary Poppendieck", 
+  "name": "Rooney Mara", 
   "number": "39-23-6423122"
 }

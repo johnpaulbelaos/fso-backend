@@ -74,7 +74,7 @@ const App = () => {
             setPersons(persons.map(p => p.id === id ? updatedNumber : p));
             setNotif(`${updatedNumber.name} number updated`);
           })
-          .catch(error => {setNotif(`Information of ${existingPerson.name} already removed from server`);})         
+          .catch(error => {setNotif(`Information of ${existingPerson.name} already removed from server`);});        
       }
     } else {
       const personObject = {name: newName, number: newNumber};
@@ -83,7 +83,8 @@ const App = () => {
         .then(returnedPerson => {
           setPersons(persons.concat(returnedPerson));
           setNotif(`Added ${returnedPerson.name}`);
-        }); 
+        })
+        .catch(error => {setNotif(`${error.response.data.error}`);});
     }
     setTimeout(() => {setNotif(null);}, 2000); 
     setNewName('');
